@@ -5,12 +5,13 @@
 # Пример примитивной реализации веб-фреймворка "Руби на Шпалах"
 #
 require_relative '../models/quote'
+require_relative 'basic_controller'
 
 # Пример простого контроллера
 class HelloController < BasicController
   # см. routes.rb - на какой путь вызывается этот метод
   def index
-    @welcome_title = "Привет, дорого друг. Сейчас на часах: #{Time.now}"
+    @welcome_title = "Привет, дорогой друг. Сейчас на часах: #{Time.now}"
     last_quote = Quote.all.last
 
     if last_quote.nil?
